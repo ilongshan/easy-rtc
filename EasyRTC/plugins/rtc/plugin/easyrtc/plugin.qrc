@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/plugin">
+        <file>EasyRTC.qml</file>
+        <file>EasyMeeting.qml</file>
+        <file>EasyCall.qml</file>
+    </qresource>
+</RCC>
