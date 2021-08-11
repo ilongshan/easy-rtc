@@ -8,7 +8,7 @@
 qt_add_resources(PLUGIN_RESOURCES ${CMAKE_CURRENT_LIST_DIR}/plugin.qrc)
 
 add_library(
-    easyrtc_plugin
+    plugins_easyrtc
     SHARED
 
     ${CMAKE_CURRENT_LIST_DIR}/easyrtc_plugin.h
@@ -28,7 +28,7 @@ set(CMAKE_AUTOMOC ON)
 find_package(Qt6 REQUIRED COMPONENTS Quick Core Qml)
 
 target_compile_features(
-    easyrtc_plugin
+    plugins_easyrtc
     PRIVATE
         cxx_auto_type
         cxx_generic_lambdas
@@ -45,7 +45,7 @@ if ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "GNU")
 endif()
 
 target_link_libraries(
-    easyrtc_plugin
+    plugins_easyrtc
     PRIVATE
         Qt6::Core
         Qt6::Quick
@@ -55,10 +55,10 @@ target_link_libraries(
 # During plugin searching Qt will be looking for 'qmldir' file
 # So we should place it next to our plugin lib.
 add_custom_command(
-    TARGET easyrtc_plugin
+    TARGET plugins_easyrtc
     POST_BUILD
     COMMAND
         ${CMAKE_COMMAND} -E copy
         ${CMAKE_CURRENT_LIST_DIR}/qmldir
-        $<TARGET_FILE_DIR:easyrtc_plugin>/qmldir
+        $<TARGET_FILE_DIR:plugins_easyrtc>/qmldir
 )

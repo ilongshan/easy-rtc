@@ -14,7 +14,7 @@ Module {
         name: "EasyRTCEngine"
         defaultProperty: "data"
         prototype: "QObject"
-        exports: ["rtc.plugin.easyrtc/EasyRTCEngine 1.0"]
+        exports: ["plugins.easyrtc/EasyRTCEngine 1.0"]
         exportMetaObjectRevisions: [0]
         Property { name: "connected"; type: "bool" }
     }

@@ -2,7 +2,7 @@ import QtQuick
 import QtQuick.Window
 import QtQuick.Controls
 
-import rtc.plugin.easyrtc as MyPlugin
+import plugins.easyrtc as MyPlugin
 
 Window {
     width: 640

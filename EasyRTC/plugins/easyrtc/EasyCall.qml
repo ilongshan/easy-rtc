@@ -1,6 +1,6 @@
 import QtQuick
 
-import rtc.plugin.easyrtc
+import plugins.easyrtc
 
 Rectangle {
     anchors.fill: parent

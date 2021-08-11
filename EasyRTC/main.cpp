@@ -1,3 +1,4 @@
+#include <QDebug>
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
 
@@ -9,8 +10,11 @@ int main(int argc, char *argv[])
 
     QGuiApplication app(argc, argv);
 
+    QString pluginsPath = app.applicationDirPath() + "/plugins";
+    qDebug() << "plugins path: " << pluginsPath;
+
     QQmlApplicationEngine engine;
-    engine.addImportPath("./plugins");
+    engine.addImportPath(pluginsPath);
 
     const QUrl url(QStringLiteral("qrc:/main.qml"));
     QObject::connect(&engine, &QQmlApplicationEngine::objectCreated,
